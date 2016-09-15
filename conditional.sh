@@ -16,10 +16,10 @@ fi
 
 # https://www.gnu.org/software/bash/manual/bash.html#Pattern-Matching
 case $1 in
-    start)
+    start|Start|START)
         echo starting
         ;;
-    stop)
+    [sS]top)
         echo stopping
         ;;
     restart)
@@ -31,13 +31,16 @@ case $1 in
 esac
 
 
+# select - easy generation of menus
 names='Brees Manning Hebert Quit'
 # PS3 used for select command prompt. if not set '#? ' is used
 PS3='Choose QB: '
 select name in $names; do
-    if [ $name = 'Quit' ]; then
+    # [: =: unary operator expected   if no double quotes around $name and
+    # choice out of range
+    if [ "$name" = 'Quit' ]; then
         break
     fi
-    echo You chose $name
+    echo You chose $name by entering $REPLY
 done
 

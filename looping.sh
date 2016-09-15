@@ -47,3 +47,9 @@ names='Brees   Manning Hebert'
 for name in $names; do
     echo $name
 done
+
+echo ---
+
+for ((i=0; i<5; i++)); do
+    echo i = $i
+done

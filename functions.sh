@@ -1,8 +1,9 @@
 #!/bin/bash
 
 
-
-function print_the_thing() {
+#function print_the_thing {
+#function print_the_thing () {
+print_the_thing () {
     echo you passed: $1
     # can return *numeric* status which is stored in $?
     return 0
@@ -15,7 +16,7 @@ echo call returned status $?
 echo ---
 
 # command substitution to capture function stdout
-function f() {
+f () {
     echo forty-two
 }
 
@@ -25,7 +26,7 @@ echo $result
 echo ---
 
 # local/global
-function scope() {
+scope () {
     local var1='local var1'
     echo inside function: var1=$var1 : var2=$var2
     var1='local var1 updated'
