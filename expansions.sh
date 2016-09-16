@@ -36,5 +36,45 @@ echo $output
 
 echo ---
 
+# filename expansion / globbing
+ls ex*
+ls [acl]*
+ls [!acl]*		#same as ls [^acl]*
+ls {a*,c*,l*}
+ls [a-f]*
+ls ????.sh
+
+echo ---
+
+name='brian fox'
+echo ${#name} chars in $name
+
+echo ---
+
+# case modification - ^ and ^^ for upper , and ,, for lower
+str=abc
+echo first character uppercase: ${str^}
+echo all characters uppercase: ${str^^}
+str=${str^^}
+echo first character lowercase: ${str,}
+echo all characters lowercase: ${str,,}
+
+echo ---
+
+# removal with pattern. # and ## from beginning, latter is greedy.
+# % and %% from end, latter is greedy
+name='brian fox bash creator'
+echo ${name#* }
+echo ${name##* }
+echo ${name% *}
+echo ${name%% *}
+
+echo ---
+
+# search and replace
+echo ${name/bash/GNU echo}
+
+echo ---
+
 # arithmetic expansion
 echo $((2**5+1))
