@@ -31,6 +31,9 @@ echo ${str: -5:-2}
 echo ---
 
 # command substitution - output of command to replace command itself
+# From the Bash Reference Manual:
+# The POSIX $() form of command substitution is implemented (see Command Substitution),
+# and preferred to the Bourne shell's `` (which is also implemented for backwards compatibility).
 output=$(tail -n 2 ~/.bash_history)
 echo $output
 

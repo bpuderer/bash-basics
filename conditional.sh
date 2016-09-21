@@ -3,6 +3,12 @@
 
 # https://www.gnu.org/software/bash/manual/bash.html#Conditional-Constructs
 # https://www.gnu.org/software/bash/manual/bash.html#Bash-Conditional-Expressions
+
+if [ -f sec.txt ]; then
+    echo 'sec.txt exists and is a regular file'
+fi
+
+
 num=30
 # spaces necessary
 if [ $num -gt 2 ] && [ $num -lt 10 ]; then
